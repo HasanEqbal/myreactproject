@@ -1,3 +1,6 @@
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable arrow-body-style */
+/* eslint-disable brace-style */
 import meeting from '../apis/meeting';
 import createHistory from '../history';
 import {
@@ -9,36 +12,77 @@ import {
   ADD_MEETING_POINTS,
 } from './type';
 
-export const createMeeting = (formValues) => async (dispatch) => {
+export const createMeeting = (payload) => {
+  return {
+    type: CREATE_MEETING,
+    payload,
+  }; 
+};
+
+export const fetchMeetings = (payload) => {
+  return {
+    type: FETCH_MEETINGS,
+    payload,
+  }; 
+};
+
+export const fetchMeeting = (payload) => {
+  return {
+    type: FETCH_MEETING,
+    payload,
+  }; 
+};
+
+export const editMeeting = (payload) => {
+  return {
+    type: EDIT_MEETING,
+    payload,
+  }; 
+};
+
+export const addingMeetingPoints = (payload) => {
+  return {
+    type: ADD_MEETING_POINTS,
+    payload,
+  }; 
+};
+
+export const deleteMeeting = (id) => {
+  return {
+    type: DELETE_MEETING,
+    payload: id,
+  }; 
+};
+
+export const boundCreateMeeting = (formValues) => async (dispatch) => {
   const response = await meeting.post('/meeting', formValues);
-  dispatch({ type: CREATE_MEETING, payload: response.data });
-  createHistory.push('/');
-};
+  dispatch(createMeeting(response.data));
+  createHistory.push('/'); };
 
-export const fetchMeetings = () => async (dispatch) => {
+export const boundFetchMeetings = () => async (dispatch) => {
   const response = await meeting.get('/meeting');
-  dispatch({ type: FETCH_MEETINGS, payload: response.data });
+  dispatch(fetchMeetings((response.data)));
 };
 
-export const fetchMeeting = (id) => async (dispatch) => {
+export const boundFetchMeeting = (id) => async (dispatch) => {
   const response = await meeting.get(`/meeting/${id}`);
-  dispatch({ type: FETCH_MEETING, payload: response.data });
+  dispatch(fetchMeeting(response.data));
 };
 
-export const editMeeting = (id, formValues) => async (dispatch) => {
+export const boundEditMeeting = (id, formValues) => async (dispatch) => {
   const response = await meeting.patch(`/meeting/${id}`, formValues);
-  dispatch({ type: EDIT_MEETING, payload: response.data });
+  dispatch(editMeeting(response.data));
   createHistory.push('/');
 };
 
-export const addingMeetingPoints = (id, formValues) => async (dispatch) => {
+export const boundAddingMeetingPoints = (id, formValues) => async (dispatch) => {
   const response = await meeting.patch(`/meeting/${id}`, formValues);
-  dispatch({ type: ADD_MEETING_POINTS, payload: response.data });
+  dispatch(addingMeetingPoints(response.data));
   createHistory.push('/');
 };
 
-export const deleteMeeting = (id) => async (dispatch) => {
+export const boundDeleteMeeting = (id) => async (dispatch) => {
   await meeting.delete(`/meeting/${id}`);
-  dispatch({ type: DELETE_MEETING, payload: id });
+  dispatch(deleteMeeting(id));
   createHistory.push('/');
 };

@@ -3,12 +3,12 @@
 /* eslint-disable arrow-parens */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createMeeting } from '../actions';
+import { boundCreateMeeting } from '../actions';
 import MeetingForm from './MeetingForm';
 
 class CreateaNewMeeting extends Component {
   onSubmit = formValues => {
-    this.props.createMeeting(formValues);
+    this.props.boundCreateMeeting(formValues);
   };
 
   render() {
@@ -25,5 +25,5 @@ class CreateaNewMeeting extends Component {
 
 export default connect(
   null,
-  { createMeeting }
+  { boundCreateMeeting }
 )(CreateaNewMeeting);

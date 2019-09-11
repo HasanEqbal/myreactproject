@@ -3,16 +3,16 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMeeting, editMeeting } from '../actions';
+import { boundFetchMeeting, boundEditMeeting } from '../actions';
 import MeetingForm from './MeetingForm';
 
 class MeetingEdit extends Component {
   componentDidMount() {
-    this.props.fetchMeeting(this.props.match.params.id);
+    this.props.boundFetchMeeting(this.props.match.params.id);
   }
 
   onSubmit = (formValues) => {
-    this.props.editMeeting(this.props.match.params.id, formValues);
+    this.props.boundEditMeeting(this.props.match.params.id, formValues);
   };
 
   render() {
@@ -39,5 +39,5 @@ class MeetingEdit extends Component {
 const mapStateToProps = (state, ownProps) => ({ editMeetingDetail: state.meetingDetails[ownProps.match.params.id] });
 export default connect(
   mapStateToProps,
-  { fetchMeeting, editMeeting },
+  { boundFetchMeeting, boundEditMeeting },
 )(MeetingEdit);

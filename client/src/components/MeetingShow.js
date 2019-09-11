@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable semi */
 /* eslint-disable object-curly-spacing */
 /* eslint-disable max-len */
@@ -12,7 +13,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchMeeting, editMeeting, addingMeetingPoints } from '../actions';
+import { boundFetchMeeting, boundEditMeeting, boundAddingMeetingPoints } from '../actions';
 
 class MeetingShow extends Component {
 state = {
@@ -20,7 +21,7 @@ state = {
 }
 
 componentDidMount() {
-  this.props.fetchMeeting(this.props.match.params.id);
+  this.props.boundFetchMeeting(this.props.match.params.id);
 }
 
 componentWillReceiveProps(props) {
@@ -47,7 +48,7 @@ handleRemove(index) {
 }
 
 handleSubmit() {
-  this.props.addingMeetingPoints(this.props.match.params.id, this.state);
+  this.props.boundAddingMeetingPoints(this.props.match.params.id, this.state);
 }
 
 renderPointsToBeDiscussed() {
@@ -97,4 +98,4 @@ const mapStateToProps = (state, ownProps) => {
   return { meetingDetail: state.meetingDetails[ownProps.match.params.id] };
 };
 
-export default connect(mapStateToProps, { fetchMeeting, editMeeting, addingMeetingPoints })(MeetingShow);
+export default connect(mapStateToProps, { boundFetchMeeting, boundEditMeeting, boundAddingMeetingPoints })(MeetingShow);

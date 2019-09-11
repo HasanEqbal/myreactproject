@@ -1,56 +1,21 @@
 {
   "meeting": [
     {
-      "meetingDescription": "new meeting with prateeks",
-      "id": 8,
-      "meetingPoints": [
-        " Third and Last meeting",
-        " Fourth Meeting",
-        " tttt"
-      ]
-    },
-    {
-      "meetingDescription": "meeting with GM",
-      "id": 9,
-      "meetingPoints": [
-        " SUNDAY",
-        " MONDAY",
-        " WEDNESDAY"
-      ]
-    },
-    {
-      "meetingDescription": "Meeting with Naveen",
-      "id": 10,
-      "meetingPoints": []
-    },
-    {
-      "meetingDescription": "Meeting with CEO",
-      "id": 12,
-      "meetingPoints": [
-        "Discuss on macys",
-        "Discuss on new clients"
-      ]
-    },
-    {
       "meetingDescription": "Meeting with Director",
-      "id": 14,
+      "id": 3,
       "meetingPoints": [
-        "eeee",
-        "ddddd"
-      ]
-    },
-    {
-      "meetingDescription": "meeting  is with Piero",
-      "id": 18,
-      "meetingPoints": [
-        "discuss on code review"
+        "wwwww",
+        "wwwwwwwww",
+        "rrrrrr",
+        "ttttttt"
       ]
     },
     {
       "meetingDescription": "Meeting with new members",
-      "id": 19,
+      "id": 4,
       "meetingPoints": [
-        "eeeee"
+        "Time waste",
+        "need more"
       ]
     }
   ]

@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { deleteMeeting, fetchMeeting } from '../actions';
+import { boundDeleteMeeting, boundFetchMeeting } from '../actions';
 import Modal from './Modal';
 import createHistory from '../history';
 
 class MeetingDelete extends Component {
   componentDidMount() {
-    this.props.fetchMeeting(this.props.match.params.id);
+    this.props.boundFetchMeeting(this.props.match.params.id);
   }
 
   renderContent() {
@@ -23,7 +23,7 @@ class MeetingDelete extends Component {
     return (
       <React.Fragment>
         <button
-          onClick={() => this.props.deleteMeeting(id)}
+          onClick={() => this.props.boundDeleteMeeting(id)}
           className="ui button negative"
         >
           Delete
@@ -54,5 +54,5 @@ const mapStateToProps = (state, ownProps) => ({
 
 export default connect(
   mapStateToProps,
-  { fetchMeeting, deleteMeeting },
+  { boundFetchMeeting, boundDeleteMeeting },
 )(MeetingDelete);

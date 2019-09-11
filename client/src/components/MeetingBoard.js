@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchMeetings } from '../actions';
+import { boundFetchMeetings } from '../actions';
 
 
 class MeetingBoard extends Component {
   componentDidMount() {
     // eslint-disable-next-line react/prop-types
-    this.props.fetchMeetings();
+    this.props.boundFetchMeetings();
   }
 
   renderMeeting() {
@@ -65,4 +65,4 @@ class MeetingBoard extends Component {
 
 const mapStateToProps = (state) => ({ meetingDetails: Object.values(state.meetingDetails) });
 
-export default connect(mapStateToProps, { fetchMeetings })(MeetingBoard);
+export default connect(mapStateToProps, { boundFetchMeetings })(MeetingBoard);
