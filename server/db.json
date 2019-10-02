@@ -1,21 +1,11 @@
 {
   "meeting": [
     {
-      "meetingDescription": "Meeting with Director",
-      "id": 3,
+      "meetingDescription": "Meeting with new member",
+      "id": 1,
       "meetingPoints": [
-        "wwwww",
-        "wwwwwwwww",
-        "rrrrrr",
-        "ttttttt"
-      ]
-    },
-    {
-      "meetingDescription": "Meeting with new members",
-      "id": 4,
-      "meetingPoints": [
-        "Time waste",
-        "need more"
+        "Intro of new members",
+        "filling the company forms"
       ]
     }
   ]

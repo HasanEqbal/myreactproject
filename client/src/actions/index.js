@@ -1,6 +1,4 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable arrow-body-style */
-/* eslint-disable brace-style */
+/*eslint-disable*/
 import meeting from '../apis/meeting';
 import createHistory from '../history';
 import {
@@ -12,47 +10,46 @@ import {
   ADD_MEETING_POINTS,
 } from './type';
 
-export const createMeeting = (payload) => {
-  return {
+export const createMeeting = (payload) => (
+{
     type: CREATE_MEETING,
-    payload,
-  }; 
-};
+    payload
+});
 
-export const fetchMeetings = (payload) => {
-  return {
-    type: FETCH_MEETINGS,
-    payload,
-  }; 
-};
+export const fetchMeetings = (payload) => (
+{
+  type: FETCH_MEETINGS,
+  payload
+});
 
-export const fetchMeeting = (payload) => {
-  return {
+
+export const fetchMeeting = (payload) => (
+  {
     type: FETCH_MEETING,
-    payload,
-  }; 
-};
+    payload
+  } 
+);
 
-export const editMeeting = (payload) => {
-  return {
+export const editMeeting = (payload) => (
+  {
     type: EDIT_MEETING,
-    payload,
-  }; 
-};
+    payload
+  } 
+);
 
-export const addingMeetingPoints = (payload) => {
-  return {
+export const addingMeetingPoints = (payload) => (
+  {
     type: ADD_MEETING_POINTS,
-    payload,
-  }; 
-};
+    payload
+  }
+);
 
-export const deleteMeeting = (id) => {
-  return {
+export const deleteMeeting = (id) => (
+  {
     type: DELETE_MEETING,
-    payload: id,
-  }; 
-};
+    payload: id
+  }
+);
 
 export const boundCreateMeeting = (formValues) => async (dispatch) => {
   const response = await meeting.post('/meeting', formValues);

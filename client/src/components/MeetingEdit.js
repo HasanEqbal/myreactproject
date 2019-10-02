@@ -1,6 +1,8 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable indent */
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { boundFetchMeeting, boundEditMeeting } from '../actions';
@@ -25,10 +27,7 @@ class MeetingEdit extends Component {
           Edit a Meeting
         </h4>
         <MeetingForm
-          initialValues={_.pick(
-            this.props.editMeetingDetail,
-            'meetingDescription',
-          )}
+          initialValues={['meetingDescription'].reduce((result, key) => { result[key] = this.props.editMeetingDetail[key]; return result; }, {})}
           onSubmit={this.onSubmit}
         />
       </div>

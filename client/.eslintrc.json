@@ -19,5 +19,14 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["*-index.js"],
+      "rules": {
+        "no-unused-expressions": "off",
+        "strict": "off"
+      }
+    }
+  ]
 }
